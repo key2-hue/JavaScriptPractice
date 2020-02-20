@@ -8,20 +8,22 @@
     ['ワシントンD.C.','ニューヨーク','ハワイ','ラスベガス'],
   ]
   const num = Math.floor(Math.random() * questions.length);
-  var question = document.createElement('div');
-  document.body.appendChild(question);
+  var question = document.querySelector('h1');
   question.id = "question";
   question.textContent = questions[num];
 
   for (let i = 0; i < 4;i++) {
-    var answer = document.createElement('div');
-    document.body.appendChild(answer);
+    var answer = document.createElement('li');
+    var answerUl = document.querySelector('ul');
+    answerUl.appendChild(answer);
     answer.id = 'answer answer' + i;
     answer.className = i;
     answer.textContent = answers[num][i];
   }
 
   
+
+
 
   
   
