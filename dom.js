@@ -14,4 +14,17 @@
   }
   setTimeout(num,1000);
 
+  
+
+  document.querySelectorAll('button')[0].addEventListener('click', () => {
+    document.querySelectorAll('li')[0].textContent = "finish!";
+  });
+
+  document.querySelectorAll('button')[1].addEventListener('click', () => {
+    document.querySelectorAll('li')[1].textContent = "finish!";
+  });
+
+  document.querySelectorAll('button')[2].addEventListener('click', () => {
+    document.querySelectorAll('li')[2].textContent = "finish!";
+  });
 }
