@@ -34,4 +34,40 @@
     info.style.color = 'skyblue';
     info.title = 'clicked 最新情報';
   });
+
+  document.getElementById('thoughtButton').addEventListener('click', ()=>{
+    const thought = document.querySelectorAll('p')[1];
+    thought.className = 'thought thought-push'
+  });
+
+  document.getElementById('keyButton').addEventListener('click', () => {
+    const key = document.querySelectorAll('p')[2];
+    const image = document.getElementById('image');
+    // if (key.classList.contains('key-push')) {
+    //   key.classList.remove('key-push')
+    //   image.classList.remove('pic')
+    // } else {
+    //   key.classList.add('key-push');
+    //   image.classList.add('pic');
+    // }
+    key.classList.toggle('key-push');
+    image.classList.toggle('pic');
+  });
+
+  document.getElementById('key2Button').addEventListener('click',() => {
+    const keyTwo = document.getElementById('key2');
+    keyTwo.textContent =
+    keyTwo.dataset.change;
+  });
+
+  let sum = 0;
+
+  document.querySelector('form').addEventListener('submit', e => {
+    e.preventDefault();
+    const post = document.createElement('li');
+    const text = document.querySelector('form > input');
+    post.textContent = text.value;
+    document.querySelector('div > ol').appendChild(post);
+    sum ++;
+  });
 }
