@@ -27,4 +27,11 @@
   document.querySelectorAll('button')[2].addEventListener('click', () => {
     document.querySelectorAll('li')[2].textContent = "finish!";
   });
+
+  document.getElementById('infoButton').addEventListener('click', () => {
+    const info = document.getElementById('info');
+    info.style.fontSize = '20px';
+    info.style.color = 'skyblue';
+    info.title = 'clicked 最新情報';
+  });
 }
