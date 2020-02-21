@@ -60,7 +60,6 @@
     keyTwo.dataset.change;
   });
 
-  let sum = 0;
 
   document.querySelector('form').addEventListener('submit', e => {
     e.preventDefault();
@@ -68,6 +67,27 @@
     const text = document.querySelector('form > input');
     post.textContent = text.value;
     document.querySelector('div > ol').appendChild(post);
-    sum ++;
+  });
+
+  document.getElementById('niceButton').addEventListener('click', () => {
+    const nice1 = document.getElementById('nice1');
+    const copy = nice1.cloneNode(true);
+
+    const nice = document.getElementById('niceAll');
+    const nice2 = document.getElementById('nice2');
+    nice.insertBefore(copy,nice2);
+  });
+
+  let add = 1;
+  document.getElementById('addButton').addEventListener('click',() => {
+    const li = document.createElement('li');
+    const btn = document.createElement('button');
+    const ul = document.getElementById('removeItem');
+    li.textContent = `${add}番目の投稿です`;
+    btn.textContent = '削除する';
+    btn.id = add;
+    ul.appendChild(li);
+    ul.appendChild(btn);
+    add++;
   });
 }
