@@ -95,11 +95,12 @@
 
   
   
-  document.querySelector('#removeItem button').addEventListener('click',() => {
+  document.querySelector('#removeButton').addEventListener('click',() => {
     const items = document.querySelectorAll('#removeItem li');
     items.forEach(item=> {
       document.querySelector('#removeItem').removeChild(item);
     })
+    add = 1;
   });
   
 
