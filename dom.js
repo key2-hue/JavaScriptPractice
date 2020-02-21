@@ -81,13 +81,28 @@
   let add = 1;
   document.getElementById('addButton').addEventListener('click',() => {
     const li = document.createElement('li');
-    const btn = document.createElement('button');
+    // const btn = document.createElement('button');
     const ul = document.getElementById('removeItem');
     li.textContent = `${add}番目の投稿です`;
-    btn.textContent = '削除する';
-    btn.id = add;
+    // btn.textContent = '削除する';
+    // btn.id = add;
+    li.style.listStyle = 'none';
     ul.appendChild(li);
-    ul.appendChild(btn);
+    // ul.appendChild(btn);
     add++;
+    console.log(add);
   });
+
+  
+  
+  document.querySelector('#removeItem button').addEventListener('click',() => {
+    const items = document.querySelectorAll('#removeItem li');
+    items.forEach(item=> {
+      document.querySelector('#removeItem').removeChild(item);
+    })
+  });
+  
+
+  
+  
 }
