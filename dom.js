@@ -66,6 +66,8 @@
     const post = document.createElement('li');
     const text = document.querySelector('form > input');
     post.textContent = text.value;
+    text.value = '';
+    text.focus();
     document.querySelector('div > ol').appendChild(post);
   });
 
@@ -81,14 +83,10 @@
   let add = 1;
   document.getElementById('addButton').addEventListener('click',() => {
     const li = document.createElement('li');
-    // const btn = document.createElement('button');
     const ul = document.getElementById('removeItem');
     li.textContent = `${add}番目の投稿です`;
-    // btn.textContent = '削除する';
-    // btn.id = add;
     li.style.listStyle = 'none';
     ul.appendChild(li);
-    // ul.appendChild(btn);
     add++;
     console.log(add);
   });
@@ -103,7 +101,21 @@
     add = 1;
   });
   
-
+  let cityNum = 0
+  const answer = document.getElementById('answer');
+  answer.addEventListener('click',() => {
+    const li = document.createElement('li');
+    const city = document.querySelector('select');
+    li.textContent = `${city.selectedIndex + 1} - ${city.value}`;
+    li.style.listStyle = 'none';
+    if(cityNum === 0) {
+      document.getElementById('city').appendChild(li);
+      cityNum++;
+      answer.textContent = "もう回答できません";
+    } else {
+      return;
+    }
+  });
   
   
 }
