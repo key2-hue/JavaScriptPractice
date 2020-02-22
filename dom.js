@@ -117,5 +117,8 @@
     }
   });
   
-  
+  document.getElementById('seasonSubmit').addEventListener('submit', e => {
+    e.preventDefault();
+    
+  });
 }
