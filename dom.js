@@ -119,6 +119,15 @@
   
   document.getElementById('seasonSubmit').addEventListener('submit', e => {
     e.preventDefault();
-    
+    const seasons = document.querySelectorAll('#seasonSubmit > input');
+    let seasonAll = [];
+    seasons.forEach(season => {
+      if(season.checked === true) {
+        seasonAll.push(season.value);
+      }
+    });
+    const li = document.createElement('li');
+    li.textContent = seasonAll;
+    document.getElementById('season').appendChild(li);
   });
 }
