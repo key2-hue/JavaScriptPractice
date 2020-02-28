@@ -130,4 +130,30 @@
     li.textContent = seasonAll;
     document.getElementById('season').appendChild(li);
   });
+
+  const cons = document.getElementById('console');
+
+  cons.addEventListener('dblclick', () => {
+    const li = document.createElement('li');
+    li.textContent = "ダブルクリックされました";
+    const ul = document.getElementById('consoleUl');
+    ul.appendChild(li);
+  })
+
+  let a = 0
+  cons.addEventListener('mousemove', () => {
+    if(a === 0) {
+      const li = document.createElement('li');
+      li.textContent = "マウスが動きました";
+      const ul = document.getElementById('consoleUl');
+      ul.appendChild(li);
+    }
+    a++;
+    
+  });
+
+  cons.addEventListener('mouseleave', () => {
+    a = 0;
+  });
+
 }
