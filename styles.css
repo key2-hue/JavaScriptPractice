@@ -35,3 +35,21 @@
   position: relative;
   top: 15px;
 }
+
+.goodConsole {
+  display: grid;
+  grid-template-rows: 50px 40px;
+  grid-template-columns: 200px 1fr;
+  grid-template-areas: 
+    "areaA areaB"
+    "areaA areaB";
+  overflow: scroll;
+}
+
+#consoleUl {
+  grid-area: areaA;
+}
+
+#axis {
+  grid-area: areaB;
+}

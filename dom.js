@@ -141,19 +141,28 @@
   })
 
   let a = 0
-  cons.addEventListener('mousemove', () => {
+  let b = 0;
+  cons.addEventListener('mousemove', e => {
     if(a === 0) {
       const li = document.createElement('li');
       li.textContent = "マウスが動きました";
       const ul = document.getElementById('consoleUl');
       ul.appendChild(li);
     }
+    if (b < 3) {
+      const li = document.createElement('li');
+      li.textContent =  e.clientX ;
+      const ul = document.getElementById('axis');
+      ul.appendChild(li);
+    }
     a++;
+    b++;
     
   });
 
   cons.addEventListener('mouseleave', () => {
     a = 0;
+    b = 0;
   });
 
 }
