@@ -165,4 +165,20 @@
     b = 0;
   });
 
+  document.getElementById('keydown').addEventListener('keydown', e => {
+    const li = document.createElement('li');
+    li.textContent =  e.key ;
+    const ul = document.getElementById('keydownList');
+    ul.appendChild(li);
+  });
+
+  const group = document.querySelector('textarea');
+  group.addEventListener('focus',() => {
+    document.getElementById('manyLetters').textContent = "文字を入力してください！";
+  });
+
+  group.addEventListener('blur', () => {
+
+  });
+
 }
