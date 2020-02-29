@@ -173,12 +173,31 @@
   });
 
   const group = document.querySelector('textarea');
+  const letter = document.getElementById('manyLetters');
   group.addEventListener('focus',() => {
-    document.getElementById('manyLetters').textContent = "文字を入力してください！";
+    letter.textContent = "文字を入力してください！";
   });
 
-  group.addEventListener('blur', () => {
+  // group.addEventListener('blur', () => {
+  //   letter.textContent = "";
+  // });
 
+  group.addEventListener('input', ()=> {
+    letter.textContent = group.value.length + "文字入力されています。";
   });
 
+  group.addEventListener('change', ()=> {
+    letter.textContent = "合計" + group.value.length + "文字です！";
+  });
+
+  document.getElementById('prevent').addEventListener('submit', e => {
+    e.preventDefault();
+    document.getElementById('preventText').textContent = "送信しました";
+  });
+
+  document.getElementById('goodCount').addEventListener('click', e =>{
+    if(e.target.nodeName === "LI") [
+      e.target.style.color = "red"
+    ]
+  });
 }
